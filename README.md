@@ -10,7 +10,8 @@ Before you begin, ensure you have the following installed on your local machine:
 
 ## Notes
 - Ensure you replace <yourdockerhubusername> with your actual Docker Hub username in the commands.
-- For security purposes, avoid using the latest tag in production environments; specify a specific version number instead.
+- For security purposes, avoid using the latest tag in production environments.
+- specify a specific version number instead.
 
 ## Steps to Create and Run a Docker Image with HTML Website
 
