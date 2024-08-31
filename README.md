@@ -8,6 +8,10 @@ Before you begin, ensure you have the following installed on your local machine:
 
 - [Docker](https://docs.docker.com/get-docker/)
 
+## Notes
+- Ensure you replace <yourdockerhubusername> with your actual Docker Hub username in the commands.
+- For security purposes, avoid using the latest tag in production environments; specify a specific version number instead.
+
 ## Steps to Create and Run a Docker Image with HTML Website
 
 ### 1. Choose and Download an HTML Template
@@ -66,3 +70,35 @@ Run the following command to build the Docker image. Replace yourdockerhubuserna
 ```bash
 docker build -t yourdockerhubusername/html-website:latest .
 ```
+This command will create a Docker image tagged as yourdockerhubusername/html-website:latest.
+
+### 5. Run the Docker Container
+To run the Docker container and expose it on port 8080 of your local machine, use the following command:
+```bash
+docker run -d -p 8080:80 yourdockerhubusername/html-website:latest
+```
+This command will run the Docker container in detached mode (-d) and map port 80 inside the container to port 8080 on your host machine.
+
+### 6. Access Your Website
+Open a web browser and navigate to http://localhost:8080 to view your HTML website hosted by Nginx.
+
+### 7. Push the Docker Image to Docker Hub (Optional)
+If you want to share your Docker image, push it to Docker Hub using the following command:
+Login to your Dockerhub Account:
+
+```bash
+docker login
+```
+Push the image: 
+```bash
+docker push yourdockerhubusername/html-website:latest
+```
+### 8. Pull and Run the Docker Image from Docker Hub (Optional)
+Others can pull and run your Docker image from Docker Hub using:
+```bash
+docker pull yourdockerhubusername/html-website:latest
+docker run -d -p 8080:80 yourdockerhubusername/html-website:latest
+```
+### Conclusion
+You have successfully created and run a Docker container that serves an HTML website using Nginx. 
+Feel free to experiment with different HTML templates from Free CSS Templates or customize the Dockerfile to suit your needs!
